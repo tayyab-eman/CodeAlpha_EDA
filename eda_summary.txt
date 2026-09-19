@@ -32,7 +32,7 @@ min      3.500000e+01
 max      8.232000e+09
 Name: population, dtype: float64
 
-Top 10 Populated countrys:
+Top 10 Populated Locations:
          country  population
 0          World  8232000000
 1          India  1429404000
