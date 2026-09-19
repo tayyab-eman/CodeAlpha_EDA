@@ -1,0 +1,46 @@
+CodeAlpha Data Analytics Internship - Task 2 EDA
+
+Dataset shape: (240, 5)
+
+Columns:
+['country', 'population', 'world_percentage', 'date', 'source']
+
+Data Types:
+country               str
+population          int64
+world_percentage      str
+date                  str
+source                str
+dtype: object
+
+Missing Values:
+country             0
+population          0
+world_percentage    0
+date                0
+source              0
+dtype: int64
+
+Descriptive Statistics:
+count    2.400000e+02
+mean     6.794096e+07
+std      5.461313e+08
+min      3.500000e+01
+25%      3.893190e+05
+50%      5.597000e+06
+75%      2.340079e+07
+max      8.232000e+09
+Name: population, dtype: float64
+
+Top 10 Populated countrys:
+         country  population
+0          World  8232000000
+1          India  1429404000
+2          China  1404890000
+3  United States   341784857
+4      Indonesia   288315089
+5       Pakistan   241499431
+6        Nigeria   223800000
+7         Brazil   214211951
+8     Bangladesh   169828911
+9         Russia   146028325
