@@ -1,63 +1,77 @@
-# CodeAlpha Data Analytics Internship — Web Source Project
+# CodeAlpha Data Analytics Internship — Task 2: Exploratory Data Analysis
 
-This project contains all 4 CodeAlpha Data Analytics tasks, using public web sources.
+## Objective
 
-## Tasks and sources
+The objective of this task is to explore and analyze a structured population dataset using Exploratory Data Analysis (EDA) techniques.
 
-### Task 1 — Web Scraping
-Source: Wikipedia — List of countries and dependencies by population
-https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
+## Dataset
 
-Tools: Requests, BeautifulSoup, Pandas
+The dataset contains population information collected from a publicly available population webpage.
 
-Output:
-`data/country_population.csv`
+The dataset contains the following columns:
 
-### Task 2 — Exploratory Data Analysis (EDA)
-Source: Our World in Data — Population, 1950 to 2023
-https://ourworldindata.org/grapher/population-unwpp
+- Country
+- Population
+- World Percentage
+- Date
+- Source
 
-Tools: Pandas, NumPy, Matplotlib
+## Tools Used
 
-Output:
-`outputs/task2_eda_summary.txt`
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
 
-### Task 3 — Data Visualization
-Source: Our World in Data — Population, 1950 to 2023
-https://ourworldindata.org/grapher/population-unwpp
+## EDA Performed
 
-Outputs:
-- `outputs/task3_top10_population_2023.png`
-- `outputs/task3_population_trend.png`
-- `outputs/task3_world_population_growth.png`
+The following analysis was performed:
 
-### Task 4 — Sentiment Analysis
-Source: UCI Machine Learning Repository — Sentiment Labelled Sentences
-https://archive.ics.uci.edu/dataset/331/sentiment+labelled+sentences
+- Dataset preview
+- Dataset shape and structure
+- Column names
+- Data types
+- Missing value analysis
+- Descriptive statistics
+- Identification of highly populated countries
+- Population distribution analysis
+- Data visualization
 
-The UCI dataset contains 3,000 positive/negative review sentences from IMDb, Amazon and Yelp. This project uses VADER, a lexicon-based sentiment method, to produce positive/negative/neutral labels.
+## Visualizations
 
-Output:
-`outputs/task4_sentiment_results.csv`
+Two visualizations were created:
 
-## Installation
+1. Top 10 Most Populated Countries
+2. Population Distribution
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
+## Output
 
-## Run
+The analysis results and visualizations are stored in the `outputs` folder.
 
-```bash
-python task1_web_scraping.py
-python task2_eda.py
-python task3_visualization.py
-python task4_sentiment_analysis.py
-```
+### Output Files
 
-## Important
-The scripts download/read public data when they are run. Keep the source links in the README and report so the dataset origin is clear.
+- `eda_summary.txt`
+- `top10_population.png`
+- `population_distribution.png`
 
-Do not upload your `.venv` folder to GitHub.
+## Conclusion
+
+The exploratory data analysis helped identify population patterns, compare highly populated countries, examine the distribution of population values, and check the structure and quality of the dataset.
+
+## Project Structure
+
+```text
+CodeAlpha_EDA/
+│
+├── task2_eda.py
+├── README.md
+├── REPORT_TASK2.md
+├── requirements.txt
+│
+├── data/
+│   └── country_population.csv
+│
+└── outputs/
+    ├── eda_summary.txt
+    ├── top10_population.png
+    └── population_distribution.png
