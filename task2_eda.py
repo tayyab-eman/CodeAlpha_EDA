@@ -35,7 +35,10 @@ df["population"] = (
     .str.replace(" ", "", regex=False)
 )
 
-df["population"] = pd.to_numeric(df["population"], errors="coerce")
+df["population"] = pd.to_numeric(
+    df["population"],
+    errors="coerce"
+)
 
 # -----------------------------
 # Basic statistics
@@ -48,7 +51,7 @@ print(df["population"].describe())
 # -----------------------------
 top10 = df.nlargest(10, "population")
 
-print("\n========== TOP 10 POPULATED ==========")
+print("\n========== TOP 10 POPULATED LOCATIONS ==========")
 print(top10[["country", "population"]])
 
 # -----------------------------
@@ -56,19 +59,36 @@ print(top10[["country", "population"]])
 # -----------------------------
 os.makedirs("outputs", exist_ok=True)
 
+# -----------------------------
 # Save EDA summary
-with open("outputs/eda_summary.txt", "w", encoding="utf-8") as f:
-    f.write("CodeAlpha Data Analytics Internship - Task 2 EDA\n\n")
-    f.write(f"Dataset shape: {df.shape}\n\n")
+# -----------------------------
+with open(
+    "outputs/eda_summary.txt",
+    "w",
+    encoding="utf-8"
+) as f:
+
+    f.write(
+        "CodeAlpha Data Analytics Internship - Task 2 EDA\n\n"
+    )
+
+    f.write(
+        f"Dataset shape: {df.shape}\n\n"
+    )
+
     f.write("Columns:\n")
     f.write(str(df.columns.tolist()))
+
     f.write("\n\nData Types:\n")
     f.write(str(df.dtypes))
+
     f.write("\n\nMissing Values:\n")
     f.write(str(df.isnull().sum()))
+
     f.write("\n\nDescriptive Statistics:\n")
     f.write(str(df["population"].describe()))
-    f.write("\n\nTop 10 Populated countrys:\n")
+
+    f.write("\n\nTop 10 Populated Locations:\n")
     f.write(str(top10[["country", "population"]]))
 
 # -----------------------------
@@ -76,26 +96,50 @@ with open("outputs/eda_summary.txt", "w", encoding="utf-8") as f:
 # Top 10 populations
 # -----------------------------
 plt.figure(figsize=(12, 6))
-sns.barplot(data=top10, x="population", y="country")
-plt.title("Top 10 Most Populated countrys")
-plt.xlabel("population")
-plt.ylabel("country")
+
+sns.barplot(
+    data=top10,
+    x="population",
+    y="country"
+)
+
+plt.title("Top 10 Most Populated Locations")
+plt.xlabel("Population")
+plt.ylabel("Location")
+
 plt.tight_layout()
-plt.savefig("outputs/top10_population.png")
+
+plt.savefig(
+    "outputs/top10_population.png"
+)
+
 plt.show()
 
 # -----------------------------
 # Visualization 2
-# population distribution
+# Population distribution
 # -----------------------------
 plt.figure(figsize=(10, 6))
-sns.histplot(df["population"].dropna(), bins=30)
-plt.title("population Distribution")
-plt.xlabel("population")
-plt.ylabel("Number of countrys")
+
+sns.histplot(
+    df["population"].dropna(),
+    bins=30
+)
+
+plt.title("Population Distribution")
+plt.xlabel("Population")
+plt.ylabel("Number of Locations")
+
 plt.tight_layout()
-plt.savefig("outputs/population_distribution.png")
+
+plt.savefig(
+    "outputs/population_distribution.png"
+)
+
 plt.show()
 
+# -----------------------------
+# Completion message
+# -----------------------------
 print("\n========== TASK 2 COMPLETED ==========")
 print("EDA results saved in the outputs folder.")
