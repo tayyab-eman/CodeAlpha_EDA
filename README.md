@@ -65,7 +65,7 @@ CodeAlpha_EDA/
 │
 ├── task2_eda.py
 ├── README.md
-├── REPORT_TASK2.md
+├── REPORT.md
 ├── requirements.txt
 │
 ├── data/
